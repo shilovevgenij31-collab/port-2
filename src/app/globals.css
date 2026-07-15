@@ -455,6 +455,20 @@ select {
   animation: heroFloatSlow 9s ease-in-out infinite;
 }
 
+@keyframes automationPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.automation-pulse {
+  animation: automationPulse 2.4s ease-in-out infinite;
+}
+
 .footer-line {
   height: 1px;
   background: var(--color-border-soft);
