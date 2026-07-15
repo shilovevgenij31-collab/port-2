@@ -3,18 +3,18 @@ import { toolGroups } from "@/data/site";
 export function ToolsSection() {
   return (
     <section
-      className="border-y border-white/[0.04] py-16 md:py-24 lg:py-[120px]"
+      className="border-y border-white/[0.04] py-12 sm:py-14 lg:py-[120px]"
       style={{ background: "#0A0A0B" }}
     >
       <div className="container-narrow">
         <p className="font-display mb-3 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-faint)]">
           Инструменты
         </p>
-        <h2 className="font-display mb-12 text-[22px] font-semibold leading-[1.2] sm:text-[26px] lg:mb-[48px] lg:text-[30px]">
+        <h2 className="font-display mb-7 text-[22px] font-semibold leading-[1.2] sm:text-[26px] lg:mb-[48px] lg:text-[30px]">
           Среда, в которой я работаю
         </h2>
 
-        <div className="mb-8 grid grid-cols-1 gap-10 sm:grid-cols-2">
+        <div className="mb-6 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:mb-8 lg:gap-10">
           <div>
             <p className="mb-4 text-[12.5px] font-semibold text-[var(--color-text-primary)]">
               {toolGroups.core.label}

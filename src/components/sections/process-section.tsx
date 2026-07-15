@@ -2,14 +2,14 @@ import { processSteps } from "@/data/site";
 
 export function ProcessSection() {
   return (
-    <section id="process" className="bg-[var(--color-bg)] py-16 md:py-24 lg:py-[120px]">
+    <section id="process" className="bg-[var(--color-bg)] py-12 sm:py-14 lg:py-[120px]">
       <div className="container-shell">
-        <p className="section-label mb-4">Подход</p>
-        <h2 className="display-title mb-14 text-[26px] leading-[1.2] sm:text-[32px] lg:mb-[56px] lg:text-[38px]">
+        <p className="section-label mb-3 lg:mb-4">Подход</p>
+        <h2 className="display-title mb-8 text-[26px] leading-[1.2] sm:text-[32px] lg:mb-[56px] lg:text-[38px]">
           Как я превращаю задачу в рабочий продукт
         </h2>
 
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-0">
+        <div className="flex flex-col gap-7 lg:flex-row lg:gap-0">
           {processSteps.map((step) => (
             <div key={step.index} className="lg:flex-1 lg:pr-4">
               <div className="mb-3.5 flex items-center gap-2.5">

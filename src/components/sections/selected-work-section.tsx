@@ -4,6 +4,7 @@ import { ProposalVisual } from "@/components/project-visuals/proposal-visual";
 import { ContentPlatformVisual } from "@/components/project-visuals/content-platform-visual";
 import { BusinessAnalysisVisual } from "@/components/project-visuals/business-analysis-visual";
 import { ToolsFamilyVisual } from "@/components/project-visuals/tools-family-visual";
+import { SelectedWorkMobileCarousel } from "@/components/sections/selected-work-mobile";
 
 const [flagship, major, contentProject, analysisProject, family] = projects;
 
@@ -11,17 +12,24 @@ export function SelectedWorkSection() {
   return (
     <section
       id="work"
-      className="py-16 md:py-24 lg:py-[120px]"
+      className="py-12 sm:py-14 lg:py-[120px]"
       style={{ background: "linear-gradient(180deg,#050505,#0A0A0B 40%,#050505)" }}
     >
       <div className="container-shell">
-        <div className="mb-12 max-w-[640px] lg:mb-14">
+        <div className="mb-8 max-w-[640px] lg:mb-14">
           <p className="section-label mb-4">{selectedWork.label}</p>
           <h2 className="display-title text-[28px] leading-[1.15] sm:text-[34px] lg:text-[42px]">
             {selectedWork.heading}
           </h2>
         </div>
+      </div>
 
+      {/* Mobile (<1024px): horizontal snap carousel, all 5 projects in order */}
+      <SelectedWorkMobileCarousel />
+
+      {/* Desktop (>=1024px): original flagship / major / paired / family layout, unchanged */}
+      <div className="hidden lg:block">
+      <div className="container-shell">
         {/* Flagship project */}
         <article className="surface-card-flagship mb-6 p-6 sm:p-8 lg:p-12">
           <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
@@ -115,6 +123,7 @@ export function SelectedWorkSection() {
           </div>
           <ToolsFamilyVisual />
         </article>
+      </div>
       </div>
     </section>
   );

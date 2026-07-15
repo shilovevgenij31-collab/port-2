@@ -47,7 +47,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header" data-scrolled={scrolled}>
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-3 px-5 py-3 sm:px-6 sm:py-3.5 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-4 lg:px-10 lg:py-4">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-2 px-[var(--gutter)] py-3 sm:gap-3 sm:py-3.5 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-4 lg:px-10 lg:py-4">
         <a href="#top" className="flex min-w-0 flex-col leading-tight" aria-label="Перейти в начало страницы">
           <span className="brand-name">{brandName}</span>
           <span className="brand-title">{brandTitle}</span>
@@ -65,8 +65,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-2.5">
-          <a href="#contact" className="btn btn-primary hidden sm:inline-flex">
+        <div className="flex shrink-0 items-center justify-end gap-2">
+          <a href="#contact" className="btn btn-primary">
             Связаться
           </a>
 

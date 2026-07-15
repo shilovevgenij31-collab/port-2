@@ -4,7 +4,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 lg:py-[120px]"
+      className="py-12 sm:py-14 lg:py-[120px]"
       style={{
         background: "radial-gradient(ellipse 700px 400px at 15% 20%, rgba(245,236,217,0.05), transparent 60%), #050505",
       }}
@@ -17,12 +17,12 @@ export function AboutSection() {
         </div>
 
         <div>
-          <p className="section-label mb-4">{about.label}</p>
-          <h2 className="display-title mb-6 text-[26px] leading-[1.2] sm:text-[32px] lg:text-[38px]">
+          <p className="section-label mb-3 lg:mb-4">{about.label}</p>
+          <h2 className="display-title mb-4 text-[26px] leading-[1.2] sm:text-[32px] lg:mb-6 lg:text-[38px]">
             {about.heading}
           </h2>
 
-          <div className="flex max-w-[620px] flex-col gap-4.5">
+          <div className="flex max-w-[620px] flex-col gap-3.5 lg:gap-4.5">
             {about.paragraphs.map((paragraph) => (
               <p key={paragraph} className="text-[15px] leading-[1.75] text-[var(--color-text-secondary)] sm:text-[15.5px]">
                 {paragraph}

@@ -8,22 +8,22 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-[72px] md:py-[110px] lg:py-[140px]"
+      className="relative overflow-hidden py-[52px] sm:py-[60px] lg:py-[140px]"
       style={{
         background:
           "radial-gradient(ellipse 800px 560px at 30% -5%, rgba(245,236,217,0.09), transparent 62%), radial-gradient(ellipse 700px 500px at 82% 8%, rgba(59,130,246,0.1), transparent 62%), linear-gradient(180deg,#060605,#040404)",
       }}
     >
       <div className="container-shell relative z-[1]">
-        <div className="mb-12 max-w-[640px] lg:mb-14">
-          <h2 className="display-title mb-5 text-[30px] leading-[1.14] sm:text-[38px] lg:text-[46px]">
+        <div className="mb-8 max-w-[640px] lg:mb-14">
+          <h2 className="display-title mb-4 text-[30px] leading-[1.14] sm:text-[38px] lg:mb-5 lg:text-[46px]">
             {contact.heading}
           </h2>
           <p className="text-[15.5px] leading-[1.7] text-[var(--color-text-secondary)]">{contact.paragraph}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
-          <div>
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+          <div className="order-2 lg:order-1">
             {primaryContact && (
               <a
                 href={primaryContact.href}
@@ -61,7 +61,9 @@ export function ContactSection() {
             </div>
           </div>
 
-          <ContactForm />
+          <div className="order-1 lg:order-2">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>

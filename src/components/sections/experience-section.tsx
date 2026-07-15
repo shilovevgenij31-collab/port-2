@@ -4,7 +4,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-16 md:py-24 lg:py-[120px]"
+      className="py-12 sm:py-14 lg:py-[120px]"
       style={{
         background:
           "radial-gradient(ellipse 900px 300px at 50% 0%, rgba(0,0,0,0.5), transparent 70%), #030303",
@@ -17,7 +17,7 @@ export function ExperienceSection() {
           </p>
           <div className="h-px flex-1 bg-[var(--color-border-soft)]" />
         </div>
-        <h2 className="display-title mb-12 max-w-[460px] text-[24px] leading-[1.25] sm:text-[28px] lg:mb-[48px] lg:text-[34px]">
+        <h2 className="display-title mb-8 max-w-[460px] text-[24px] leading-[1.25] sm:text-[28px] lg:mb-[48px] lg:text-[34px]">
           От сайтов и автоматизаций — к AI-продуктам
         </h2>
 
@@ -39,7 +39,7 @@ export function ExperienceSection() {
                   />
                 )}
               </div>
-              <div className="pb-10">
+              <div className="pb-7 lg:pb-10">
                 <p
                   className="font-display mb-1.5 text-[13px] font-bold"
                   style={{ color: entry.current ? "#E7D3AC" : "var(--color-text-muted)" }}

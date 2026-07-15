@@ -2,17 +2,17 @@ import { collaboration } from "@/data/site";
 
 export function CollaborationSection() {
   return (
-    <section className="bg-[var(--color-bg-raised-1)] py-16 md:py-24 lg:py-[120px]">
+    <section className="bg-[var(--color-bg-raised-1)] py-12 sm:py-14 lg:py-[120px]">
       <div className="container-shell">
-        <h2 className="display-title mb-12 max-w-[700px] text-[26px] leading-[1.2] sm:text-[32px] lg:mb-[48px] lg:text-[38px]">
+        <h2 className="display-title mb-8 max-w-[700px] text-[26px] leading-[1.2] sm:text-[32px] lg:mb-[48px] lg:text-[38px]">
           {collaboration.heading}
         </h2>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 lg:gap-5 lg:grid-cols-2">
           {collaboration.formats.map((format) => (
             <div
               key={format.title}
-              className="rounded-[18px] p-7 sm:p-8 lg:p-10"
+              className="rounded-[18px] p-6 sm:p-8 lg:p-10"
               style={
                 format.emphasis
                   ? {

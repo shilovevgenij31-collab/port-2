@@ -2,15 +2,15 @@ import { professionalSummary } from "@/data/site";
 
 export function ProfessionalSummarySection() {
   return (
-    <section className="bg-[var(--color-bg)] py-16 md:py-24 lg:py-[120px]">
+    <section className="bg-[var(--color-bg)] py-12 sm:py-14 lg:py-[120px]">
       <div className="container-narrow">
-        <p className="section-label mb-4">{professionalSummary.label}</p>
-        <h2 className="display-title mb-5 text-[26px] leading-[1.2] sm:text-[32px] lg:text-[38px]">
+        <p className="section-label mb-3 lg:mb-4">{professionalSummary.label}</p>
+        <h2 className="display-title mb-4 text-[26px] leading-[1.2] sm:text-[32px] lg:mb-5 lg:text-[38px]">
           {professionalSummary.heading}
         </h2>
-        <p className="lead-copy mb-9 text-[16px]">{professionalSummary.paragraph}</p>
+        <p className="lead-copy mb-6 text-[16px] lg:mb-9">{professionalSummary.paragraph}</p>
 
-        <div className="mb-9 grid grid-cols-1 gap-x-8 gap-y-3.5 sm:grid-cols-2">
+        <div className="mb-6 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:mb-9 lg:gap-y-3.5">
           {professionalSummary.focusAreas.map((area, index) => (
             <div
               key={area}
