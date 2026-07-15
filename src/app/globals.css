@@ -89,6 +89,15 @@ select {
   }
 }
 
+/* All hand-authored component classes below live in the "components"
+   layer so Tailwind's utility classes (which Tailwind v4 places in its
+   own "utilities" layer) always win when a utility like lg:hidden is
+   combined with one of these classes on the same element. Leaving
+   these unlayered would make them beat every Tailwind utility
+   regardless of specificity or source order — do not remove this
+   wrapper. */
+@layer components {
+
 /* ---------- Layout shell ---------- */
 
 .container-shell {
@@ -542,3 +551,5 @@ select {
     background: linear-gradient(90deg, transparent, var(--color-bg));
   }
 }
+
+} /* end @layer components */
