@@ -13,13 +13,6 @@ export function HeroSection() {
     >
       <div className="container-shell relative z-[2] grid items-center gap-10 lg:grid-cols-[minmax(420px,560px)_1fr] lg:gap-14">
         <div>
-          <div className="mb-4 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[var(--color-border-strong)] bg-white/[0.03] px-3.5 py-1.5 lg:mb-6">
-            <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-accent-blue)] shadow-[0_0_8px_2px_rgba(59,130,246,0.55)]" />
-            <span className="whitespace-nowrap text-[12.5px] font-semibold tracking-wide text-[var(--color-text-secondary)]">
-              {hero.label}
-            </span>
-          </div>
-
           <h1 className="display-title mb-4 text-[38px] leading-[1.08] sm:text-[46px] md:text-[54px] lg:mb-5 lg:text-[64px]">
             {hero.headingLead}{" "}
             <span
