@@ -1,4 +1,5 @@
 import { about } from "@/data/site";
+import { Reveal } from "@/components/ui/reveal";
 
 export function AboutSection() {
   return (
@@ -10,13 +11,13 @@ export function AboutSection() {
       }}
     >
       <div className="container-shell grid items-start gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
-        <div className="hidden lg:block" aria-hidden="true">
-          <span className="font-display text-[96px] font-extrabold leading-none text-[rgba(245,236,217,0.06)] xl:text-[120px]">
+        <Reveal className="hidden lg:block" delay={80}>
+          <span aria-hidden="true" className="font-display text-[96px] font-extrabold leading-none text-[rgba(245,236,217,0.06)] xl:text-[120px]">
             ET
           </span>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal>
           <p className="section-label mb-3 lg:mb-4">{about.label}</p>
           <h2 className="display-title mb-4 text-[26px] leading-[1.2] sm:text-[32px] lg:mb-6 lg:text-[38px]">
             {about.heading}
@@ -32,7 +33,7 @@ export function AboutSection() {
               {about.closing}
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

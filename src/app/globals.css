@@ -550,6 +550,13 @@ select {
   border-radius: 18px;
   background: var(--color-bg-raised-3);
   border: 1px solid var(--color-border-soft);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.surface-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-edge-brass);
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.75);
 }
 
 .surface-card-flagship {
@@ -559,6 +566,12 @@ select {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.08) inset,
     0 70px 120px -40px rgba(0, 0, 0, 0.85);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.surface-card-flagship:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-edge-brass);
 }
 
 .surface-card-major {
@@ -566,12 +579,24 @@ select {
   background: linear-gradient(165deg, #141518, #101012);
   border: 1px solid var(--color-border-soft);
   box-shadow: 0 40px 80px -34px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.surface-card-major:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-edge-brass);
 }
 
 .surface-tile {
   border-radius: 10px;
   background: var(--color-bg-raised-5);
   border: 1px solid var(--color-border-soft);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.surface-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-strong);
 }
 
 /* ---------- Patch 0: система поверхностей (раздел 4 брифа) ----------
@@ -695,6 +720,172 @@ select {
   margin: 0;
 }
 
+/* ---------- Capability cards (soft radius, replaces the old
+   grid-gap-as-border "table" look) ---------- */
+
+.capability-card {
+  border-radius: var(--radius-card);
+  background: linear-gradient(160deg, #16171b, #0e0e10);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-edge-brass);
+  box-shadow:
+    0 1px 0 var(--color-edge-lit) inset,
+    0 -1px 0 var(--color-edge-dark) inset,
+    0 34px 64px -26px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- Tool chips ---------- */
+
+.tool-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-control);
+  padding: 9px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.tool-chip-core {
+  background: linear-gradient(180deg, #1a1a1e 0%, #131316 100%);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 10px 20px -14px rgba(0, 0, 0, 0.7);
+}
+
+.tool-chip-core:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-edge-brass);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 14px 26px -14px rgba(0, 0, 0, 0.8);
+}
+
+.tool-chip-project {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-text-secondary);
+}
+
+.tool-chip-project:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+/* ---------- Contact cards ---------- */
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: var(--radius-card);
+  padding: 16px 18px;
+  background: var(--color-bg-raised-2);
+  border: 1px solid var(--color-border-soft);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-edge-brass);
+  background: var(--color-bg-raised-3);
+}
+
+.contact-card-primary {
+  background: linear-gradient(155deg, #181614, #131210);
+  border: 1px solid rgba(245, 236, 217, 0.18);
+  box-shadow: 0 1px 0 rgba(245, 236, 217, 0.16) inset;
+}
+
+.contact-card-primary:hover {
+  border-color: rgba(245, 236, 217, 0.34);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-control);
+  background: rgba(245, 236, 217, 0.08);
+  border: 1px solid rgba(245, 236, 217, 0.16);
+  color: var(--color-accent-gold-end);
+}
+
+.contact-card:not(.contact-card-primary) .contact-icon {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Collaboration cards ---------- */
+
+.collab-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.collab-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Process steps ---------- */
+
+.process-step {
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-3px);
+}
+
+.process-step:hover .process-step-index {
+  color: var(--color-accent-gold-end);
+}
+
+.process-step-index {
+  transition: color 0.3s ease;
+}
+
+/* ---------- Experience entries ---------- */
+
+.experience-entry {
+  border-radius: var(--radius-card);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.experience-entry:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ---------- Misc animation ---------- */
 
 @keyframes heroFloat {
@@ -786,6 +977,14 @@ select {
     scroll-snap-align: start;
     flex: 0 0 auto;
     width: 88vw;
+    opacity: 0.5;
+    transform: scale(0.92) translateY(6px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .carousel-card[data-active="true"] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 
   @media (min-width: 380px) {

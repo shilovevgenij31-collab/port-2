@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { projectVisibilityLabels, projects, type Project } from "@/data/site";
 import { ReportStackVisual } from "@/components/project-visuals/report-stack-visual";
 import { ProposalVisual } from "@/components/project-visuals/proposal-visual";
@@ -22,9 +25,17 @@ function ProjectVisual({ project }: { project: Project }) {
   }
 }
 
-function MobileProjectCard({ project, index }: { project: Project; index: number }) {
+function MobileProjectCard({
+  project,
+  index,
+  cardRef,
+}: {
+  project: Project;
+  index: number;
+  cardRef: (node: HTMLElement | null) => void;
+}) {
   return (
-    <article className="carousel-card surface-card p-5">
+    <article ref={cardRef} className="carousel-card surface-card p-5">
       <div className="mb-3 flex flex-wrap gap-2">
         <span className="pill">{projectVisibilityLabels[project.visibility]}</span>
         {index === 0 && <span className="pill pill-gold">Флагман</span>}
@@ -45,13 +56,43 @@ function MobileProjectCard({ project, index }: { project: Project; index: number
 }
 
 export function SelectedWorkMobileCarousel() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLElement[]>([]);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          entry.target.setAttribute("data-active", String(entry.intersectionRatio >= 0.6));
+        }
+      },
+      { root: track, threshold: [0, 0.25, 0.5, 0.6, 0.75, 1] },
+    );
+
+    for (const card of cardsRef.current) {
+      if (card) observer.observe(card);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="lg:hidden">
       <p className="container-shell mb-3 text-[12px] text-[var(--color-text-muted)]">Листайте карточки →</p>
       <div className="relative">
-        <div className="carousel-track" aria-label="Проекты" aria-roledescription="карусель проектов">
+        <div ref={trackRef} className="carousel-track" aria-label="Проекты" aria-roledescription="карусель проектов">
           {projects.map((project, index) => (
-            <MobileProjectCard key={project.id} project={project} index={index} />
+            <MobileProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              cardRef={(node) => {
+                if (node) cardsRef.current[index] = node;
+              }}
+            />
           ))}
         </div>
         <div className="carousel-hint" aria-hidden="true" />
