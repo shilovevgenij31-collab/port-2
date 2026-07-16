@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Sora, Unbounded, Golos_Text, Martian_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,6 +11,25 @@ const inter = Inter({
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Patch 0 (DESIGN-BRIEF.md): three new roles — display / body / utility.
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
+  subsets: ["cyrillic", "latin"],
+  display: "swap",
+});
+
+const golosText = Golos_Text({
+  variable: "--font-golos",
+  subsets: ["cyrillic", "latin"],
+  display: "swap",
+});
+
+const martianMono = Martian_Mono({
+  variable: "--font-martian-mono",
+  subsets: ["cyrillic", "latin"],
   display: "swap",
 });
 
@@ -50,7 +69,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${inter.variable} ${sora.variable}`}>
+    <html
+      lang="ru"
+      className={`${inter.variable} ${sora.variable} ${unbounded.variable} ${golosText.variable} ${martianMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
